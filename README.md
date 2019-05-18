@@ -1,6 +1,6 @@
 # geladinha_api
 
-This is the API Geladinha! With this API you can create point of sales (POS) and find the closest POS of a given locality.
+This is the Geladinha API! With this API you can create point of sales (POS) and find the closest POS of a given locality.
 
 ## How to build and deploy this API
 
