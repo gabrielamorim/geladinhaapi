@@ -82,7 +82,7 @@ Content-Type	application/json
 
 ```
 
-##### Exmaple request
+##### Example request
 
 ```
 curl --location --request POST "http://localhost:8080/create/pos" \
