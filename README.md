@@ -6,7 +6,7 @@ This is the API Geladinha! With this API you can create point of sales (POS) and
 
 This API uses [SpringBoot](https://spring.io/projects/spring-boot) with embedded [Tomcat](http://tomcat.apache.org/) and embedded [MongoDB](https://www.mongodb.com/). So you don't need to waste your time with complicated builds or deploys. But if you want to use MongoDB in your own server, you can setup your DB in the application.properties file.
 
-Besides that, [Jersey](https://jersey.github.io/) and [SpringData](https://spring.io/projects/spring-data) are also used in this API.
+Besides that, [Jersey](https://jersey.github.io/) and [SpringData](https://spring.io/projects/spring-data) are also used in this API to make your REST development and data management really easy.
 
 #### Build and run
 
@@ -40,6 +40,8 @@ And one last thing, the SpringBootApplication init class (GeladinhaApiApplicatio
 
 
 #### Create POS
+
+Create a POS in the database and returns the created POS. Document (CNPJ) must be unique and if you send a payload with the same id the data will be updated in database.
 
 POST /create/pos
 
@@ -116,6 +118,8 @@ curl --location --request POST "http://localhost:8080/create/pos" \
 
 #### Find POS by ID
 
+Returns a POS that matches the id, otherwise returns HTTP 404 not found.
+
 GET /search/{id}
 
 ```
@@ -130,6 +134,8 @@ curl --location --request GET "http://localhost:8080/search/1"
 
 
 #### Find the closest POS given the coordinates of a point
+
+Returns a JSON array with the nearest POS by the given point or an empty array in case there is no POS close. The max distance for a POS  to be considered close is 10 km.
 
 GET /search/location?x={x}&y={y}
 
